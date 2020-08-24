@@ -1,0 +1,88 @@
+.header .container,
+.navigation,
+.navigation-list,
+.header-address-list {
+    display: flex;
+    align-items: center;
+}
+
+.navigation-list,
+.header-address-list {
+    margin: 0px;
+}
+
+.navigation-list-item:not(:last-child) {
+    margin-right: 50px;
+}
+
+.header-address {
+    margin-left: auto;
+}
+
+.text-logo {
+    font-family: Raleway;
+    font-weight: bold;
+    font-size: 26px;
+    line-height: 1.19;    
+    /* identical to box height */
+    
+    color: $accent-color;
+    margin-right: 85px;
+}
+
+.text-logo-black,
+.navigation-list-item-link {
+    color: $title-dark-color;
+}
+
+.currently {
+    color: $accent-color;
+
+    &::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 4px;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        background-color: $accent-color;
+    }
+}
+
+
+
+.text-logo-white {
+    color: $title-background-light-color;
+}
+
+.navigation-list-item-link,
+.header-address-item-link {
+    position: relative;
+    display: block;
+    font-weight: 500;
+    font-style: normal;
+    line-height: 1.14;
+    letter-spacing: 0.02em;
+    padding-top: 32px;
+    padding-bottom: 32px;
+}
+
+.header-address-item-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: $description-color;
+}
+
+.header-address-item-link-icon {
+    margin-right: 10px;
+    fill: $description-color;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    .header-address-item-link:hover &,
+    .header-address-item-link:focus & {
+        fill: $accent-color;
+    }
+}
