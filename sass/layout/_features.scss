@@ -3,8 +3,7 @@
 }
 
 .features-list {
-    display: flex;
-    margin: 0px;
+    @extend %flex-marg0;
 }
 
 .features-list-item {
@@ -13,10 +12,9 @@
 }
 
 .features-list-item-picture {
-    display: flex;
+    @extend %flex-alcenter;
     padding: 25px 100px;
     justify-content: center;
-    align-items: center;
 
     background: #F5F4FA;
     border-radius: 4px;

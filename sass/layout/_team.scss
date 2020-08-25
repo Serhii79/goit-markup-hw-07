@@ -1,6 +1,16 @@
 .team {
     background-color: $background-team-color;
     height: 514px;
+
+    .social-links-item-link-icon {
+        fill: #afb1b8;
+        transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    
+        &:hover,
+        &:focus {
+            fill: $title-background-light-color;
+        }
+    }
 }
 
 .team-title {
@@ -49,15 +59,3 @@
 .team-social-list {
     padding-bottom: 24px;
 }
-
-.team .social-links-item-link-icon {
-    fill: #afb1b8;
-    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.team .social-links-item-link-icon:hover,
-.team .social-links-item-link-icon:focus {
-    fill: $title-background-light-color;
-}
-
-/* team-title подключено к .specialization-title */

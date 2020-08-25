@@ -1,13 +1,14 @@
-.header .container,
-.navigation,
-.navigation-list,
-.header-address-list {
-    display: flex;
-    align-items: center;
+.navigation {
+    @extend %flex-alcenter;
 }
 
-.navigation-list,
+.navigation-list {
+    @extend %flex-alcenter;
+    margin: 0px;
+}
+
 .header-address-list {
+    @extend %flex-alcenter;
     margin: 0px;
 }
 
@@ -17,22 +18,6 @@
 
 .header-address {
     margin-left: auto;
-}
-
-.text-logo {
-    font-family: Raleway;
-    font-weight: bold;
-    font-size: 26px;
-    line-height: 1.19;    
-    /* identical to box height */
-    
-    color: $accent-color;
-    margin-right: 85px;
-}
-
-.text-logo-black,
-.navigation-list-item-link {
-    color: $title-dark-color;
 }
 
 .currently {
@@ -50,14 +35,7 @@
     }
 }
 
-
-
-.text-logo-white {
-    color: $title-background-light-color;
-}
-
-.navigation-list-item-link,
-.header-address-item-link {
+.navigation-list-item-link {
     position: relative;
     display: block;
     font-weight: 500;
@@ -66,12 +44,20 @@
     letter-spacing: 0.02em;
     padding-top: 32px;
     padding-bottom: 32px;
+
+    color: $title-dark-color;
 }
 
 .header-address-item-link {
-    display: flex;
+    @extend %flex-alcenter;
+    position: relative;
+    font-weight: 500;
+    font-style: normal;
+    line-height: 1.14;
+    letter-spacing: 0.02em;
+    padding-top: 32px;
+    padding-bottom: 32px;
     justify-content: center;
-    align-items: center;
 
     color: $description-color;
 }

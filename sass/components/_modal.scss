@@ -4,19 +4,17 @@
     left: 0;
     width: 100%;
     height: 100%;
-    display: flex;
     justify-content: center;
-    align-items: center;
+    @extend %flex-alcenter;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 100;
 }
 
 .hero-form { 
     position: relative;
-    display: flex;
+    @extend %flex-alcenter;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     padding: 40px;
 
     background-color: $title-background-light-color;
@@ -111,8 +109,7 @@
 
 .hero-form-agreement {    
     position: relative;
-    display: flex;
-    align-items: center;
+    @extend %flex-alcenter;
     margin-bottom: 30px;
 
     a {
@@ -165,31 +162,4 @@
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-}
-
-.form-close-button {
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    top: 8px;
-    right: 8px;
-    width: 30px;
-    height: 30px;
-    padding: 0px;
-    margin: 0px;
-    border-radius: 50%;
-    background-color: transparent;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    cursor: pointer;    
-}
-
-.form-close-button-icon {
-    fill: $title-dark-color;
-    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
-    .form-close-button:hover &,
-    .form-close-button:focus & {
-        fill: $accent-color;
-    }
 }

@@ -10,13 +10,12 @@
     padding-bottom: 34px;
 }
 
-.portfolio-btn-list,
-.portfolio-main-list {
-    display: flex;
-    margin: 0px;
+.portfolio-btn-list {
+    @extend %flex-marg0;
 }
 
 .portfolio-main-list {
+    @extend %flex-marg0;
     flex-wrap: wrap;
 }
 
@@ -32,18 +31,20 @@
     text-align: center;
     padding: 6px 22px;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
-    background: $background-button-portfolio-color;
     border-radius: 4px;
     border: 0px;
+
+    background: $background-button-portfolio-color;
     color: $title-dark-color;
+
+    &:hover,
+    &:focus {
+        background: $accent-color;
+        color: $title-background-light-color;
+    }
 }
 
-.portfolio-btn:hover,
-.portfolio-btn:focus {
-    background: $accent-color;
-    color: $title-background-light-color;
-}
+
 
 .portfolio-main-list-item {
     width: 370px;
@@ -54,11 +55,21 @@
     border: 1px solid #EEEEEE;
     box-sizing: border-box;
     transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover {
+        box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16), 0px 4px 4px rgba(0, 0, 0, 0.06), 0px 1px 1px rgba(0, 0, 0, 0.12);
+    }
+
+    &:nth-child(3n) {
+        margin-right: 0px;
+    }
+    
+    &:nth-last-child(-n + 3) {
+        margin-bottom: 0px;
+    }
 }
 
-.portfolio-main-list-item:hover {
-    box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16), 0px 4px 4px rgba(0, 0, 0, 0.06), 0px 1px 1px rgba(0, 0, 0, 0.12);
-}
+
 
 .portfolio-main-list-item-pic {
     position: relative;
@@ -66,23 +77,22 @@
 }
 
 .porfolio-discription-hover {
-    display: flex;
+    @extend %flex-alcenter;
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     justify-content: center;
-    align-items: center;
     transform: translateY(100%);
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
     background: rgba(33, 150, 243, 0.9);
-}
 
-.portfolio-main-list-item-link:hover .porfolio-discription-hover,
-.portfolio-main-list-item-link:focus .porfolio-discription-hover {
-    transform: translateY(0);
+    .portfolio-main-list-item-link:hover &,
+    .portfolio-main-list-item-link:focus & {
+        transform: translateY(0);
+    }
 }
 
 .portfolio-discription {
@@ -92,25 +102,16 @@
     font-size: 18px;
     line-height: 28px;
     /* or 156% */
-
     letter-spacing: 0.03em;
+
     color: $title-background-light-color;
 }
 
 .portfolio-main-list-item-link {
     text-decoration: none;
+
     color: $description-color;
 }
-
-
-.portfolio-main-list-item:nth-child(3n) {
-    margin-right: 0px;
-}
-
-.portfolio-main-list-item:nth-last-child(-n + 3) {
-    margin-bottom: 0px;
-}
-
 
 .portfolio-main-list-item-title {
     font-weight: bold;
@@ -119,8 +120,13 @@
     /* identical to box height, or 200% */
     letter-spacing: 0.06em;
     text-transform: capitalize;
+    width: 322px;
+    height: 36px;
+    text-align: left;
     margin-top: 20px;
     margin-bottom: 0px;
+    margin-left: 24px;
+    margin-right: 24px;
     
     color: $title-dark-color;
 }
@@ -130,15 +136,11 @@
     line-height: 1.87;
     /* identical to box height, or 187% */
     text-transform: capitalize;
-    margin-top: 4px;
-    margin-bottom: 20px;
-}
-
-.portfolio-main-list-item-title,
-.portfolio-main-description {
     width: 322px;
     height: 36px;
     text-align: left;
+    margin-top: 4px;
+    margin-bottom: 20px;
     margin-left: 24px;
     margin-right: 24px;
 }
